@@ -1,44 +1,38 @@
-# turtle clicking game
-# click the turtle and it moves somewhere else!!
-
 import turtle
 import random
 
+painter = turtle.Turtle()
+pop_up = turtle.Screen()
+pop_up.title("Turtle Game")
+
+
+score = 0
+
+painter.shape("turtle")
+painter.turtlesize(2,2)
+painter.penup()
+painter.speed(0)
+
+# r1 = random.randint(0.)
+# r2 = random.randint(0.)
+# r3 = random.randint(0.)
+
+colors = ["red" , "orange", "yellow" , "green", "blue", "purple", "pink", "black","brown", "grey"]
+
+painter.color(random.choice(colors))
+
+painter.goto(random.randint(-327,327), random.randint(-250,213))
+
+def teleportation(x,y):
+    painter. stamp()
+    painter.color(random.choice(colors))
+    painter.hideturtle()
+    painter.goto(random.randint(-327,327), random.randint(-250,213))
+    painter.showturtle()
+
+painter.onclick(teleportation)
+
+
+
 wn = turtle.Screen()
-wn.title("turtle clicking game")
-wn.setup(800,600)
-wn.bgcolor("white")
-
-# list of colors the turtle can be
-colors = ["red", "orange", "yellow", "green", "blue", "purple", "pink", "brown", "cyan", "magenta"]
-
-# make the turtle
-t = turtle.Turtle()
-t.shape("turtle")
-t.shapesize(2,2)
-t.penup()
-t.speed(0)
-
-# random color from the list
-t.color(random.choice(colors))
-
-t.goto(random.randint(-350,350), random.randint(-250,250))
-
-
-def clicked(x,y):
-    #print(x,y)
-    t.stamp() # leaves a mark
-
-    # new color
-    t.color(random.choice(colors))
-    t.setheading(random.randint(0,360))
-
-    # teleport!
-    t.hideturtle()
-    t.goto(random.randint(-350,350),random.randint(-250,250))
-    t.showturtle()
-
-
-t.onclick(clicked)
-
-turtle.done()
+wn.mainloop()
