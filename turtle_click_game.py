@@ -26,6 +26,8 @@ painter.goto(random.randint(-300,300), random.randint(-250,213))
 def teleportation(x,y):
     painter. stamp()
     painter.color(random.choice(colors))
+    size = random.randint(1,4)
+    painter.turtlesize(size,size)
     painter.hideturtle()
     painter.goto(random.randint(-300,300), random.randint(-250,213))
     painter.showturtle()
