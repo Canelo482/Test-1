@@ -21,13 +21,13 @@ colors = ["red" , "orange", "yellow" , "green", "blue", "purple", "pink", "black
 
 painter.color(random.choice(colors))
 
-painter.goto(random.randint(-327,327), random.randint(-250,213))
+painter.goto(random.randint(-300,300), random.randint(-250,213))
 
 def teleportation(x,y):
     painter. stamp()
     painter.color(random.choice(colors))
     painter.hideturtle()
-    painter.goto(random.randint(-327,327), random.randint(-250,213))
+    painter.goto(random.randint(-300,300), random.randint(-250,213))
     painter.showturtle()
 
 painter.onclick(teleportation)
