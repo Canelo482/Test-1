@@ -29,7 +29,9 @@ def teleportation(x,y):
     size = random.randint(1,4)
     painter.turtlesize(size,size)
     painter.hideturtle()
+    painter.penup()
     painter.goto(random.randint(-300,300), random.randint(-250,213))
+    painter.pendown()
     painter.showturtle()
 
 painter.onclick(teleportation)
