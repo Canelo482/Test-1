@@ -29,6 +29,26 @@ scoreboard.penup()
 scoreboard.goto(pop_up.window_width()/2 - 30, pop_up.window_height()/2 - 60)
 scoreboard.write(score, align="right", font=("Arial", 30, "bold"))
 
+# countdown timer in the top left corner
+time_left = 24
+timer = turtle.Turtle()
+timer.hideturtle()
+timer.penup()
+timer.goto(-pop_up.window_width()/2 + 30, pop_up.window_height()/2 - 60)
+timer.write(time_left, align="left", font=("Arial", 30, "bold"))
+
+def countdown():
+    global time_left
+    time_left = time_left - 1
+    timer.clear()
+    timer.write(time_left, align="left", font=("Arial", 30, "bold"))
+    if time_left > 0:
+        pop_up.ontimer(countdown, 1000)  # run again in 1 second
+    else:
+        painter.onclick(None)  # times up, turtle cant be clicked anymore
+
+pop_up.ontimer(countdown, 1000)
+
 
 def teleportation(x,y):
     global score
