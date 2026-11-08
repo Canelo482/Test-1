@@ -8,9 +8,11 @@ wn = turtle.Screen()
 wn.title("turtle clicking game")
 wn.setup(800,600)
 wn.bgcolor("white")
-wn.colormode(255)
 
 score = 0
+
+# list of colors the turtle can be
+colors = ["red", "orange", "yellow", "green", "blue", "purple", "pink", "brown", "cyan", "magenta"]
 
 # make the turtle
 t = turtle.Turtle()
@@ -19,11 +21,8 @@ t.shapesize(2,2)
 t.penup()
 t.speed(0)
 
-# random color
-r = random.randint(0,255)
-g = random.randint(0,255)
-b = random.randint(0,255)
-t.color(r,g,b)
+# random color from the list
+t.color(random.choice(colors))
 
 t.goto(random.randint(-350,350), random.randint(-250,220))
 
@@ -44,10 +43,7 @@ def clicked(x,y):
     pen.write("Score: " + str(score), align="center", font=("Arial", 16, "normal"))
 
     # new color
-    r = random.randint(0,255)
-    g = random.randint(0,255)
-    b = random.randint(0,255)
-    t.color(r,g,b)
+    t.color(random.choice(colors))
     t.setheading(random.randint(0,360))
 
     # teleport!
