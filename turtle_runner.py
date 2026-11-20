@@ -43,7 +43,7 @@ game_over = False
 def show_score():
     pen.clear()
     pen.goto(0, 150)
-    pen.write(f"Score: {score}", align="center", font=("Arial", 18, "bold"))
+    pen.write("Score: " + str(score), align="center", font=("Arial", 18, "bold"))
 
 
 def jump():
