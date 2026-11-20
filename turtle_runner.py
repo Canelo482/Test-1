@@ -68,7 +68,6 @@ def restart():
 def game_loop():
     global velocity, speed, score, game_over
     if not game_over:
-
         velocity -= GRAVITY
         y = player.ycor() + velocity
         if y <= PLAYER_Y:
@@ -76,14 +75,12 @@ def game_loop():
             velocity = 0
         player.sety(y)
 
-
         rock.setx(rock.xcor() - speed)
         if rock.xcor() < -420:
             rock.setx(random.randint(420, 700))
             score += 1
             speed = min(speed + 0.3, 15)
             show_score()
-
 
         if player.distance(rock) < 25:
             game_over = True
