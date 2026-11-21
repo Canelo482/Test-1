@@ -6,6 +6,10 @@ PLAYER_Y = -87
 GRAVITY = 0.8
 JUMP_POWER = 13
 rock_colors = ["gray", "brown", "black"]
+velocity = 0
+speed = 6
+score = 0
+game_over = False
 
 screen = turtle.Screen()
 screen.setup(800, 400)
@@ -13,7 +17,8 @@ screen.title("Turtle Runner")
 screen.bgcolor("lightblue")
 screen.tracer(0)
 
-ground = turtle.Turtle(visible=False)
+ground = turtle.Turtle()
+ground.hideturtle()
 ground.penup()
 ground.goto(-400, GROUND_Y)
 ground.pendown()
@@ -32,13 +37,9 @@ rock.shapesize(1.5, 1)
 rock.penup()
 rock.goto(450, GROUND_Y + 15)
 
-pen = turtle.Turtle(visible=False)
+pen = turtle.Turtle()
+pen.hideturtle()
 pen.penup()
-
-velocity = 0
-speed = 6
-score = 0
-game_over = False
 
 
 def show_score():
