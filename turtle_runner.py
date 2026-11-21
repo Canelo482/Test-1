@@ -61,8 +61,8 @@ def restart():
     speed = 6
     score = 0
     game_over = False
-    player.goto(-300, PLAYER_Y)
-    rock.goto(450, GROUND_Y + 15)
+    player.sety(PLAYER_Y)
+    rock.setx(450)
     show_score()
 
 
@@ -74,11 +74,11 @@ def game_loop():
         if y <= PLAYER_Y:
             y = PLAYER_Y
             velocity = 0
-        player.goto(-300, y)
+        player.sety(y)
 
-        rock.goto(rock.xcor() - speed, GROUND_Y + 15)
+        rock.setx(rock.xcor() - speed)
         if rock.xcor() < -420:
-            rock.goto(random.randint(420, 700), GROUND_Y + 15)
+            rock.setx(random.randint(420, 700))
             rock.color(random.choice(rock_colors))
             score += 1
             speed = min(speed + 0.3, 15)
