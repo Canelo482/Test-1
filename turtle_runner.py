@@ -32,7 +32,7 @@ player.penup()
 player.goto(-300, PLAYER_Y)
 
 rock = turtle.Turtle("square")
-rock.color("gray")
+rock.color(random.choice(rock_colors))
 rock.shapesize(1.5, 1)
 rock.penup()
 rock.goto(450, GROUND_Y + 15)
