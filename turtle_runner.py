@@ -5,6 +5,7 @@ GROUND_Y = -100
 PLAYER_Y = -87
 GRAVITY = 0.8
 JUMP_POWER = 13
+rock_colors = ["gray", "brown", "black"]
 
 screen = turtle.Screen()
 screen.setup(800, 400)
@@ -78,6 +79,7 @@ def game_loop():
         rock.setx(rock.xcor() - speed)
         if rock.xcor() < -420:
             rock.setx(random.randint(420, 700))
+            rock.color(random.choice(rock_colors))
             score += 1
             speed = min(speed + 0.3, 15)
             show_score()
