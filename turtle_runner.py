@@ -77,7 +77,7 @@ def game_loop():
             velocity = 0
         player.sety(y)
 
-        rock.setx(rock.xcor() - speed)
+        rock.forward(-speed)
         if rock.xcor() < -420:
             rock.setx(random.randint(420, 700))
             rock.color(random.choice(rock_colors))
