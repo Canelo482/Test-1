@@ -70,7 +70,7 @@ def restart():
 def game_loop():
     global velocity, speed, score, game_over
     if game_over == False:
-        velocity -= GRAVITY
+        velocity = velocity - GRAVITY
         y = player.ycor() + velocity
         if y <= PLAYER_Y:
             y = PLAYER_Y
